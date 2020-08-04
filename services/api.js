@@ -1,5 +1,5 @@
 class API {
-  static baseURL = 'https://card-backend.herokuapp.com';
+  static baseURL = 'https://card-backend.herokuapp.com/';
   static get(url) {
     return fetch(this.baseURL + url).then(function (response) {
       if (response.status !== 200) {
