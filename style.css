@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* disabling any scrolling on body */
+
+body {
+  overflow: hidden;
+  background-color: #45b08c;
+  font-family: 'Chelsea Market', cursive;
+}
+
+/* Start Game form */
+.startGameForm {
+  height: 100vh;
+  width: 50vw;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: black;
+  border: 1rem solid black;
+}
+
+.startGameForm form {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.startGameForm label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.startGameForm input {
+  margin: 1rem;
+  padding: 0.4rem;
+}
+.startGameForm input[type='submit'] {
+  font-family: 'Chelsea Market', cursive;
+  background-color: black;
+  color: white;
+  width: 100%;
+  margin-left: -3%;
+  padding: 1rem;
+}
+
+.startGameForm h1 {
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 50px;
+}
+#player1NameFormInputField {
+  margin-left: 7%;
+}
+
+#player6NameFormInputField {
+  margin-left: 5.5%;
+}
+
+/* New Game form Header area */
+.startFormTitleArea {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4rem;
+}
+/* New Game form footer area */
+.startFormFooterArea {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4rem;
+}
+
+/* Form Card Suit icons */
+.clubsIcon,
+.spadesIcon {
+  font-size: 4.5rem;
+}
+.diamondsIcon,
+.heartsIcon {
+  font-size: 4.5rem;
+  color: red;
+}
+
+/* Player order */
+.randomCard {
+  padding: 2rem;
+}
+
+.orderReveal {
+  width: 100vw;
+  height: 100vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.cardReveal {
+  display: flex;
+}
+
+.playerName {
+  padding: 1rem;
+  animation: fadeIn ease 10s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cardFlip {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipCard {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-left: 25%;
+}
+
+.flipCardInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: cardFlip ease 3s forwards;
+}
+
+@keyframes cardFlip {
+  0% {
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.flipCardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  margin-left: 3rem;
+}
+
+.flipCardBack {
+  position: absolute;
+  height: 100%;
+  margin-left: 3rem;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+/* Playing areas */
+
+.playersScreen {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  background: black;
+}
+
+.deckArea {
+  height: 30vh;
+  width: 100%;
+  background: green;
+}
+
+.sequenceDropArea {
+  width: 100%;
+  height: 35vh;
+  background: green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.playerScreen {
+  width: 100%;
+  height: 35vh;
+  background: green;
+  border: 1px solid black;
+}
+
+/* Deck Area */
+.deckArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+.deckAndDrop {
+  display: flex;
+}
+
+.deck {
+  margin-right: 11rem;
+  position: relative;
+}
+
+.dropZone {
+  height: 240px;
+  width: 157px;
+  border: 1px dotted black;
+  position: relative;
+}
+
+.dropZone > * {
+  position: absolute;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 3rem;
+}
+
+.info > * {
+  margin: 0.5rem;
+}
+
+.gameRules {
+  background-color: black;
+  color: white;
+  width: 200px;
+  padding: 1rem;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.leaderboard {
+  margin-left: 3rem;
+  margin-right: 10rem;
+}
+
+/* Players Hand */
+.handCard {
+  margin-left: -4rem;
+  margin-bottom: 0;
+}
+
+.playerScreen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.deckCardTop {
+  position: absolute;
+  z-index: 1;
+}
+
+.deckCard {
+  position: absolute;
+}
+
+.betweenTurns {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+  background: black;
+  border: 1px solid black;
+}
+
+.betweenTurnsMessage {
+  color: white;
+}
+
+/* Sortable selected class */
+.sortable-selected {
+  border: 5px solid red;
+}
+
+/* Winner reveal */
+.winnerReveal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #45b08c;
+  margin-top: 8%;
+}
+
+.winnerReveal h1 {
+  color: black;
+  font-size: 4rem;
+  padding: 2rem;
+}
+
+.winnerReveal h2 {
+  padding: 1rem;
+}
+
+.newGameBtn {
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+}
+
+.playAgainBtn {
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+/* Rules modal  */
+
+.rulesModal {
+  display: none;
+  width: 80vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #45b08c;
+  margin: auto;
+}
+
+.rulesInfo {
+  position: relative;
+  background-color: green;
+  border: 5px solid black;
+  height: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.3rem;
+}
+
+.rulesInfo h1 {
+  padding: 2rem;
+}
+
+.rulesInfo ol {
+  padding: 1rem;
+}
+
+.rulesInfo span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+/* final page standings */
+.standings {
+  font-size: 2rem;
+}

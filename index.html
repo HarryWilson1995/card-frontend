@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Sequence</title>
+  </head>
+  <body>
+    <div class="sequenceContainer">
+      <div class="startGameForm">
+        <div class="startFormTitleArea">
+          <h2 class="heartsIcon">&hearts;</h2>
+          <h1>Sequence Lite</h1>
+          <h2 class="spadesIcon">&spades;</h2>
+        </div>
+        <form id="newGameForm">
+          <label for="player1">Player 1: </label>
+          <input
+            type="text"
+            id="player1NameFormInputField"
+            name="player1"
+            placeholder="Player 1 Name Here"
+          />
+          <br />
+          <label for="player2">Player 2: </label>
+          <input
+            type="text"
+            id="player2NameFormInputField"
+            name="player2"
+            placeholder="Player 2 Name Here"
+          />
+          <br />
+          <label for="player3">Player 3: </label>
+          <input
+            type="text"
+            id="player3NameFormInputField"
+            name="player3"
+            placeholder="Player 3 Name Here"
+          />
+          <br />
+          <label for="player4">Player 4: </label>
+          <input
+            type="text"
+            id="player4NameFormInputField"
+            name="player4"
+            placeholder="Player 4 Name Here"
+          />
+          <br />
+          <label for="player5">Player 5: </label>
+          <input
+            type="text"
+            id="player5NameFormInputField"
+            name="player5"
+            placeholder="Player 5 Name Here"
+          />
+          <br />
+          <label for="player6">Player 6: </label>
+          <input
+            type="text"
+            id="player6NameFormInputField"
+            name="player6"
+            placeholder="Player 6 Name Here"
+          />
+          <br />
+          <label for="player7">Player 7: </label>
+          <input
+            type="text"
+            id="player7NameFormInputField"
+            name="player7"
+            placeholder="Player 7 Name Here"
+          />
+          <br />
+          <input id="newGame" type="submit" value="Start New Game" />
+        </form>
+        <div class="startFormFooterArea">
+          <h2 class="clubsIcon">&clubs;</h2>
+          <h2 class="diamondsIcon">&diams;</h2>
+        </div>
+      </div>
+      <div class="winnerReveal">
+        <h1 class="winner"></h1>
+        <h2>The Current Standings are:</h2>
+        <ol class="standings"></ol>
+        <button class="playAgainBtn">Play Again</button>
+        <button class="newGameBtn">Choose New Players</button>
+      </div>
+      <div class="orderReveal">
+        <h1 class="randomCard">
+          A random card has been drawn for each player to determine who goes
+          first:
+        </h1>
+        <div class="cardReveal"></div>
+      </div>
+      <div class="playersScreen">
+        <div class="deckArea">
+          <div class="info">
+            <h2 class="currentTurn"></h2>
+            <h2 class="roundInfo"></h2>
+          </div>
+          <div class="deckAndDrop">
+            <div class="deck"></div>
+            <div class="dropZone"></div>
+          </div>
+          <div class="leaderboard">
+            <h1>Scores</h1>
+            <ol class="scores"></ol>
+          </div>
+          <button class="gameRules">Rules</button>
+        </div>
+        <div class="sequenceDropArea"></div>
+      </div>
+      <div class="rulesModal">
+        <div class="rulesInfo">
+          <span class="closeRulesBtn">&times;</span>
+          <h1>Rules</h1>
+          <ol>
+            <li>Each player receives 9 cards</li>
+            <li>
+              At the start of your turn, pickup a card or place<br />
+              one or multiple sets
+            </li>
+            <li>The goal is to be the first to discard all your <br />cards</li>
+            <li>
+              You cannot finish your turn without first having<br />
+              drawn a card
+            </li>
+            <li>
+              Place sets of 3, these may be consecutive cards <br />of the same
+              suit, such as 4, 5, 6 of spades or sets of<br />
+              the same numbers, such as three 3s
+            </li>
+            <li>
+              Once a set has been placed down, you may <br />not return it to
+              your hand
+            </li>
+            <li>Jokers are wild</li>
+            <li>
+              Aces are high, so you may not have a consecutive <br />
+              set of ace, two, three of the same suit
+            </li>
+            <li>The person with the most wins will go first</li>
+            <li>Click on a card to select multiple cards to drag as a set</li>
+            <li>
+              Once selected, a card will show a red border, you may <br />not
+              drag one single card to the discard pile when it <br />
+              is selected. Simply unselect and drag the single card
+            </li>
+            <li>
+              Have fun and keep an eye out for future versions <br />
+              of the game
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="./js/form.js"></script>
+    <script src="./js/card.js"></script>
+    <script src="./js/deck.js"></script>
+    <script src="./js/hand.js"></script>
+    <script src="./js/dropzone.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/round.js"></script>
+    <script src="./js/sequence.js"></script>
+    <script src="./js/view.js"></script>
+    <script src="./services/api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
